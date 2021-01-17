@@ -5,14 +5,16 @@
     - name: install python-docker di ubuntu
       apt:
         name: 
-          - python3
-          - python3-docker
+          - python
+          - python-docker
         state: present
       when: ansible_distribution == "Ubuntu"
     - name: install python-docker centos
       yum:
-        name: python-docker
-        state: present
+        name:
+        - python
+        - python-docker
+         state: present
       when: ansible_distribution == "CentOS"
     - name: pull image docker
       docker_image:
