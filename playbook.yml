@@ -12,7 +12,7 @@
     - name: install python-docker centos
       yum:
         name:
-          - python
+          - python3
         state: present
       when: ansible_distribution == "CentOS"
     - name: pull image docker
